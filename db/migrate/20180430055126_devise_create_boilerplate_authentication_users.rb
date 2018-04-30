@@ -1,6 +1,6 @@
 class DeviseCreateBoilerplateAuthenticationUsers < ActiveRecord::Migration[5.1]
   def change
-    create_table :boilerplate_authentication_users do |t|
+    create_table :boilerplate_users do |t|
       ## Database authenticatable
       t.string :email,              null: false, default: ""
       t.string :encrypted_password, null: false, default: ""
@@ -34,9 +34,9 @@ class DeviseCreateBoilerplateAuthenticationUsers < ActiveRecord::Migration[5.1]
       t.timestamps null: false
     end
 
-    add_index :boilerplate_authentication_users, :email,                unique: true
-    add_index :boilerplate_authentication_users, :reset_password_token, unique: true
-    # add_index :boilerplate_authentication_users, :confirmation_token,   unique: true
-    # add_index :boilerplate_authentication_users, :unlock_token,         unique: true
+    add_index :boilerplate_users, :email,                unique: true
+    add_index :boilerplate_users, :reset_password_token, unique: true
+    # add_index :boilerplate_users, :confirmation_token,   unique: true
+    # add_index :boilerplate_users, :unlock_token,         unique: true
   end
 end
